@@ -6,7 +6,7 @@ export class MovieForm extends FormGroup{
         super({
             id: new FormControl(0),
             title: new FormControl('',[Validators.required]),
-            genre: new FormControl(''),
+            genre: new FormControl('',[Validators.required]),
             releaseDate: new FormControl('')
         })
     }
