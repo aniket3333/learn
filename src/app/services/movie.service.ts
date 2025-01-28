@@ -19,9 +19,8 @@ export class MovieService implements Imovieservice {
   addMovie(model: Movie): Observable<Movie> {
    return this._http.post<Movie>(Api.ADD_MOVIE,model); 
   }
-  getMovieById(id:number):Observable<Movie>{
-    let params  = new HttpParams().set('id',id);
-return this._http.get<Movie>(Api.GET_MOVIE_BY_ID,{params});
+  getMovieById(id: number): Observable<Movie> {
+    return this._http.get<Movie>(`${Api.GET_MOVIE_BY_ID}/${id}`);
   }
   updateMovie(id:number,movie:Movie):Observable<Movie>{
     return this._http.put<Movie>(`${Api.UPDATE_MOVIE}/${id}`,movie)

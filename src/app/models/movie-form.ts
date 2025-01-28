@@ -23,6 +23,7 @@ return model;
 
     setFormData(model:Movie)
     {
+        debugger
         this.get('id')?.setValue(model.id ?? 0);
         this.get('title')?.setValue(model.title ?? '');
         this.get('genre')?.setValue(model.genre ?? '');

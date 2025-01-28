@@ -47,11 +47,30 @@ submit()
 return;
   }
   let model = this.movieForm.getFormData();
-  this._movieservice.addMovie(model).subscribe((response)=>{
-console.log(response);
-this.navigate();
-  });
+  if(model.id>0)
+  {
+this.update();
+  }else{
+this.add();
+  }
 
+}
+
+add()
+{
+  let model = this.movieForm.getFormData();
+  this._movieservice.updateMovie(model.id,model).subscribe((response)=>{
+    console.log(response);
+    this.navigate();
+      });
+}
+update()
+{
+  let model = this.movieForm.getFormData();
+  this._movieservice.addMovie(model).subscribe((response)=>{
+    console.log(response);
+    this.navigate();
+      });
 }
 navigate()
 {
