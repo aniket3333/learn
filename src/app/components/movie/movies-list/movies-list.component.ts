@@ -16,7 +16,14 @@ ngOnInit(): void {
 
   this.getAllMovies();
 }
+editMovie(id:number)
+{
 
+}
+deleteMovie(id:number)
+{
+
+}
 getAllMovies()
 {
   debugger

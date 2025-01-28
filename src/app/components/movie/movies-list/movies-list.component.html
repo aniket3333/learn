@@ -15,6 +15,7 @@
         <thead>
           <tr>
             <th scope="col">#</th>
+            <th scope="col">Action</th>
             <th scope="col">Movie name</th>
             <th scope="col">Artist</th>
             <th scope="col">Release Date</th>
@@ -23,7 +24,15 @@
         <tbody>
           <tr *ngFor="let item of moviesList; let i=index">
             <td>{{i+1}}</td>
-           <td>{{item?.title}}</td>
+            <td>
+              <!-- Edit Icon -->
+               <button class="btn btn-sm btn-primary px-2 py-1 me-2" title="update"><i class="fas fa-edit" (click)="editMovie(item.id)"></i></button>
+               <button class="btn btn-sm btn-danger px-2 py-1" title="delete"> <i class="fas fa-trash" (click)="deleteMovie(item.id)"></i></button>
+
+             
+            </td>
+           
+                       <td >{{item?.title}}</td>
            <td>{{item?.genre}}</td>
            <td>{{item?.releaseDate | date:'dd-MM-yyyy'}}</td>
           </tr>
