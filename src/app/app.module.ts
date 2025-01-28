@@ -3,8 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MoviesListComponent } from './movie/movies-list/movies-list.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MoviesListComponent } from './components/movie/movies-list/movies-list.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     NgbModule
   ],
-  providers: [],
+  providers: [
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
