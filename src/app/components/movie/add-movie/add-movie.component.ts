@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MovieForm } from 'src/app/models/movie-form';
 import { Imovieservice, MOVIE_SERVICE } from 'src/app/services/Imovies.service';
 
@@ -11,13 +11,20 @@ import { Imovieservice, MOVIE_SERVICE } from 'src/app/services/Imovies.service';
 export class AddMovieComponent implements OnInit {
   movieForm:MovieForm;
   submitted: boolean;
-constructor(private router:Router,@Inject(MOVIE_SERVICE) private  _movieservice:Imovieservice){}
+  movieId: string;
+constructor(private router:Router,private activeroute:ActivatedRoute,@Inject(MOVIE_SERVICE) private  _movieservice:Imovieservice){}
 
 get f(){
   return this.movieForm.controls;
 }
 ngOnInit(): void {
  this.movieForm = new MovieForm();
+
+
+this.activeroute.queryParams.subscribe((params)=>{
+      this.movieId = params['id'];
+  
+});
 
 }
 submit()
@@ -40,3 +47,5 @@ navigate()
   this.router.navigate(['/movie-list']);
 }
 }
+
+

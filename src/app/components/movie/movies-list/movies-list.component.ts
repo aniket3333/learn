@@ -18,7 +18,7 @@ ngOnInit(): void {
 }
 editMovie(id:number)
 {
-
+  this.router.navigate(['/add-movie'],{queryParams:{id:id}});
 }
 deleteMovie(id:number)
 {
