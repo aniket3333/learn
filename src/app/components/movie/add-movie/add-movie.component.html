@@ -1,1 +1,50 @@
-<p>add-movie works!</p>
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-3">
+            <div class="card">
+                <div class="card-header">
+                  <div class="d-flex align-item-center justify-content-between">
+                    <h5>Add Movie</h5>
+
+                    <div>
+                        <button type="button" class="btn btn-sm btn-outline-danger me-2" (click)="navigate()"><i class="fas fa-arrow-left"></i></button>
+                    <button type="button" class="btn btn-sm btn-primary" (click)="submit()">Submit</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+<div class="row">
+    <div class="col-md-6 offset-3">
+        <form [formGroup]="movieForm">
+            <div class="col-md-12">
+                <label class="form-label">Movie name</label>
+                <input type="input" class="form-control" formControlName="title" [ngClass]="{'is-invalid':submitted && f?.['title']?.errors}"/>
+                <div *ngIf="submitted && f?.['title']?.errors" class="invalid-feedback">
+                    <div *ngIf="submitted && f?.['title']?.errors?.['required']">
+                      Movie name is required
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-12">
+                <label class="form-label">Actor</label>
+                <input type="input" class="form-control" formControlName="genre" [ngClass]="{'is-invalid':submitted && f?.['genre'].errors}" />
+                <div *ngIf="submitted && f?.['genre'].errors" class="invalid-feedback">
+                    <div *ngIf="submitted && f?.['genre'].errors?.['required']">
+                    Actor is required
+                        </div>
+
+                </div>
+            </div>
+            <div class="col-md-12">
+                <label class="form-label">Release date</label>
+                <input type="date" class="form-control" formControlName="releaseDate" />
+            </div>
+             </form>
+    </div>
+ 
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

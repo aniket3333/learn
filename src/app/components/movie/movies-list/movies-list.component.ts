@@ -1,4 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Movie } from 'src/app/models/movie.model';
 import { Imovieservice, MOVIE_SERVICE } from 'src/app/services/Imovies.service';
 
@@ -9,7 +10,7 @@ import { Imovieservice, MOVIE_SERVICE } from 'src/app/services/Imovies.service';
 })
 export class MoviesListComponent implements OnInit {
   moviesList:any
-  constructor(@Inject(MOVIE_SERVICE) private  _movieservice:Imovieservice){}
+  constructor(@Inject(MOVIE_SERVICE) private  _movieservice:Imovieservice,private router:Router){}
 ngOnInit(): void {
   debugger
 
@@ -23,5 +24,9 @@ getAllMovies()
 console.log(response);
 this.moviesList = response;
   });
+}
+navigate()
+{
+  this.router.navigate(['/add-movie']);
 }
 }
