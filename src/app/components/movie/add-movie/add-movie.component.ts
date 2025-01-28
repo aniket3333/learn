@@ -23,6 +23,11 @@ ngOnInit(): void {
 
 this.activeroute.queryParams.subscribe((params)=>{
       this.movieId = params['id'];
+      if(this.movieId>0)
+      {
+        this.getById();
+
+      }
   
 });
 
