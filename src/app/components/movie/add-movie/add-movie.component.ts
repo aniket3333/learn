@@ -11,7 +11,7 @@ import { Imovieservice, MOVIE_SERVICE } from 'src/app/services/Imovies.service';
 export class AddMovieComponent implements OnInit {
   movieForm:MovieForm;
   submitted: boolean;
-  movieId: string;
+  movieId: number;
 constructor(private router:Router,private activeroute:ActivatedRoute,@Inject(MOVIE_SERVICE) private  _movieservice:Imovieservice){}
 
 get f(){
@@ -26,6 +26,12 @@ this.activeroute.queryParams.subscribe((params)=>{
   
 });
 
+}
+
+private getById(){
+  this._movieservice.getMovieById(this.movieId).subscribe((response)=>{
+this.movieForm.setFormData(response);
+  });
 }
 submit()
 {
