@@ -59,7 +59,7 @@ this.add();
 add()
 {
   let model = this.movieForm.getFormData();
-  this._movieservice.updateMovie(model.id,model).subscribe((response)=>{
+  this._movieservice.addMovie(model).subscribe((response)=>{
     console.log(response);
     this.navigate();
       });
@@ -67,7 +67,7 @@ add()
 update()
 {
   let model = this.movieForm.getFormData();
-  this._movieservice.addMovie(model).subscribe((response)=>{
+  this._movieservice.updateMovie(model.id,model).subscribe((response)=>{
     console.log(response);
     this.navigate();
       });

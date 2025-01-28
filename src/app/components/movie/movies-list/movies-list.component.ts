@@ -22,7 +22,11 @@ editMovie(id:number)
 }
 deleteMovie(id:number)
 {
-
+  this._movieservice.deleteMovie(id).subscribe((response)=>{
+    console.log(response);
+    // this.navigate();
+    this.getAllMovies();
+      });
 }
 getAllMovies()
 {

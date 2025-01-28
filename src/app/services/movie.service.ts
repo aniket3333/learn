@@ -26,8 +26,8 @@ export class MovieService implements Imovieservice {
     return this._http.put<Movie>(`${Api.UPDATE_MOVIE}/${id}`,movie)
   }
   deleteMovie(id:number):Observable<string>{
-    let params = new HttpParams()
-    .set('id',id)
-    return this._http.delete<string>(Api.DELETE_MOVIE_BY_ID,{params});
+    // let params = new HttpParams()
+    // .set('id',id)
+    return this._http.delete<string>(`${Api.DELETE_MOVIE_BY_ID}/${id}`);
   }
 }
