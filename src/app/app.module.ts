@@ -5,19 +5,26 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MoviesListComponent } from './components/movie/movies-list/movies-list.component';
+import { ProviderList } from './app-provider-register';
+import {HttpClientModule} from '@angular/common/http';
+import { AddMovieComponent } from './components/movie/add-movie/add-movie.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MoviesListComponent
+    MoviesListComponent,
+    AddMovieComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
-    
+    ProviderList
   ],
   bootstrap: [AppComponent]
 })
